@@ -1,3 +1,6 @@
+# WARNING
+These releases include nimisin; osbscure words not officially included in the dictionaries, usually sandbox words that might not help with learning the main language (unless that helps your attention like me lol). I don't know how to segment it properly yet (other than the idea of maybe tags inside the definitions? like 'nimisin (obscure)'. hmmhm (unsure)), if you have any suggestions, please let me know. thanks :) 
+
 # Kindle Dictionaries for Toki Pona
 
 Using community data from lipu Linku by kala Asi, construct dictionaries for Toki Pona words 
