@@ -1,5 +1,5 @@
 # WARNING
-These releases include nimisin; osbscure words not officially included in the dictionaries, usually sandbox words that might not help with learning the main language (unless that helps your attention like me lol). I don't know how to segment it properly yet (other than the idea of maybe tags inside the definitions? like 'nimisin (obscure)'. hmmhm (unsure)), if you have any suggestions, please let me know. thanks :) 
+These releases include nimisin; osbscure words not officially included in the dictionaries, usually sandbox words that might not help with learning the main language (unless that helps your attention like me lol). For more streamlined and official learning usage, please use the original repo's releases. I don't know how to segment it properly yet (other than the idea of maybe tags inside the definitions? like 'nimisin (obscure)'. hmmhm (unsure)), if you have any suggestions, please let me know. thanks :) 
 
 # Kindle Dictionaries for Toki Pona
 
