@@ -7,7 +7,7 @@ import argparse
 # code for deploying templates: https://code-maven.com/minimal-example-generating-html-with-python-jinja
 
 # parse args for language
-parser = argparse.ArgumentParser(description="create a Toki Pona dictionary mobi for use in kindles")
+parser = argparse.ArgumentParser(description="create a Toki Pona dictionary for fun sandbox words, for use in kindles")
 parser.add_argument("-a", "--all", help="compile dictionaries for all languages available", action="store_true")
 parser.add_argument("lang", help="the short id for the output language of the dictionary, as listed in the linku data", default=["en"], nargs="*")
 args = parser.parse_args()
@@ -26,6 +26,22 @@ if args.all:
 else:
     languages = args.lang
 
+words_to_remove = {
+    "a", "akesi", "ala", "alasa", "ale", "ali", "anpa", "ante", "anu", "awen",
+    "e", "en", "esun", "ijo", "ike", "ilo", "insa", "jaki", "jan", "jelo",
+    "jo", "kala", "kalama", "kama", "kasi", "ken", "kepeken", "kili", "kiwen", "ko",
+    "kon", "kule", "kulupu", "kute", "la", "lape", "laso", "lawa", "len", "lete",
+    "li", "lili", "linja", "lipu", "loje", "lon", "luka", "lukin", "lupa", "ma",
+    "mama", "mani", "meli", "mi", "mije", "moku", "moli", "monsi", "mu", "mun",
+    "musi", "mute", "nanpa", "nasa", "nasin", "nena", "ni", "nimi", "noka", "o",
+    "olin", "ona", "open", "pakala", "pali", "palisa", "pan", "pana", "pi", "pilin",
+    "pimeja", "pini", "pipi", "poka", "poki", "pona", "pu", "sama", "seli", "selo",
+    "seme", "sewi", "sijelo", "sike", "sin", "sina", "sinpin", "sitelen", "sona", "soweli",
+    "suli", "suno", "supa", "suwi", "tan", "taso", "tawa", "telo", "tenpo", "toki",
+    "tomo", "tu", "unpa", "uta", "utala", "walo", "wan", "waso", "wawa", "weka",
+    "wile", "namako", "kin", "oko", "kipisi", "leko", "monsuta", "tonsi", "jasima",
+    "kijetesantakalu", "soko", "meso", "lanpan", "n", "misikeke", "ku"
+}
 
 for LANG_ID in languages:
     if LANG_ID not in linku["languages"].keys():
@@ -46,6 +62,10 @@ for LANG_ID in languages:
     # create dictionary content from template
     defs = {}
     for word, data in linku["data"].items():
+	# skip words that are not on the keep list
+        if word not in words_to_keep:
+            continue
+
         if LANG_ID in data["def"]:
             defn = data["def"][LANG_ID]
         else:
