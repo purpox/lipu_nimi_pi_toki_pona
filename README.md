@@ -3,26 +3,27 @@
 
 # Kindle Dictionaries for Toki Pona
 
-Using community data from lipu Linku by kala Asi, construct dictionaries for Toki Pona words 
-compatible with kindle devices for quick word lookup. Great for new learners of the language.
+Using community data from lipu Linku by kala Asi, this constructs dictionaries for the core Toki Pona words 
+compatible with Kindle-like devices for quick word lookup. Great for new learners of the language.
 
 ## Releases
 
-To quickly get dictionaries compatibile with your kindle device, you can download 
+To quickly get dictionaries compatible with your Kindle device, you can download 
 pre-compiled .mobi files in your preferred language from the 
-[Releases](https://github.com/IanC27/lipu_nimi_pi_toki_pona/releases) page.
+[Releases](https://github.com/prpx/lipu_nimi_pi_toki_pona/releases) page.
+Core words (the ones you want) and sandbox (obscure words by the community) are separated per-release.
 
-To load the dictionary onto your kindle, use [this guide](https://blog.the-ebook-reader.com/2015/07/14/kindle-dictionary-guide-how-to-add-change-and-create-custom-kindle-dictionaries/)
+To load the dictionary onto your Kindle, use [this guide.](https://blog.the-ebook-reader.com/2015/07/14/kindle-dictionary-guide-how-to-add-change-and-create-custom-kindle-dictionaries/)
 
 ## Compiling your own dictionary
 
-If you want a dictionary with the most up-to-date data from Linku, or want to do some customizing to your dictionary, then follow these steps to compile using the python scripts.
+If you want a dictionary with the most up-to-date data from Linku, or want to do some customizing to your dictionary, then follow these steps to compile using the Python scripts.
 
 ### Dependencies
 
 You will need to have Python 3.10.5 or later installed: [download](https://www.python.org/downloads/)
 
-Additionally, you will need a couple of python modules:
+Additionally, you will need a couple of Python modules:
 
 - Jinja2
 
@@ -32,13 +33,13 @@ Additionally, you will need a couple of python modules:
 
 `pip install requests`
 
-Lastly you will need a tool to generate mobi files. The best way is to use [kindlegen](https://archive.org/details/kindlegen_202011). Download the executable and place it in the current directory or add it to path. The script will use it to generate your mobi for you.
+Lastly, you will need a tool to generate mobi files. For Windows, the best way is to use [kindlegen](https://archive.org/details/kindlegen_202011). Download the executable and place it in the current directory or add it to PATH. The script will use it to generate your mobi for you.
 
-Alternatively, you can use Amazon's current tool, [Kindle Previewer](https://www.amazon.com/Kindle-Previewer/b?ie=UTF8&node=21381691011). **However, it does not currently support exporting in a number of scripts, including Devanagari and Arabic.**
+Alternatively, you can use Amazon's current tool, [Kindle Previewer](https://www.amazon.com/Kindle-Previewer/b?ie=UTF8&node=21381691011). **However, it does not currently support exporting in several scripts, including Devanagari and Arabic.**
 
 ### How to Compile
 
-To create your dictionary, run the python script `dict_file_gen.py` on the command line with the following arguments:
+To create your dictionary, run the Python script `dict_file_gen.py` on the command line with the following arguments:
 
     usage: dict_file_gen.py [-h] [-a] [lang ...]
 
@@ -60,7 +61,7 @@ will generate a Toki Pona-Spanish dictionary.
 
 If you specify no language, it will use English by default. 
 
-To view all the languages available, their ids, % completeness, and more, `lang_table_gen.py` will create a document `supported_languages.html` which contains a table of that information.
+To view all the languages available, their IDs, % completeness, and more, `lang_table_gen.py` will create a document `supported_languages.html` which contains a table of that information.
 
 Once you have run the main script, you should find new files in `dict_files/{language}/`.
 If the script directory contains `kindlegen.exe`, you should see `tok-{ID}.mobi` is built and ready to load. If not, continue to the next section.
